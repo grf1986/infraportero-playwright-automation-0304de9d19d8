@@ -1,0 +1,59 @@
+[
+  {
+    "description": "    as a user \n    I want to log in to the AppFactoryApp application \n    and navigate to the aanvragen app\n    so i can check if i am on the right page",
+    "keyword": "Feature",
+    "name": "Check user is on the right page",
+    "line": 1,
+    "id": "check-user-is-on-the-right-page",
+    "tags": [],
+    "uri": "features\\login.feature",
+    "elements": [
+      {
+        "id": "check-user-is-on-the-right-page;check-if-user-is-on-the-right-page",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Check if user is on the right page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "Go to AppFactoryApp app page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "Login to AppFactoryApp test env",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "Click on aanvragen app",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "Check that user is on the right page",
+            "result": {
+              "status": "undefined"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+node_modules/
+/playwright-report/
+/playwright/.cache/
+package.json/
+src\hooks\hooks.ts
+test-results/*.html
+test-results/*.png
+test-results/*.json
+test-results/*
+
+.qodo
