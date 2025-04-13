@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "debug": "cucumber-js --tags  @Buk_existingClient_BUK_BRP_2",
-    "aanvragen_Klachten_tests1": "cucumber-js --tags @Aanvragen_Klacht_REQ-K-ZSD-1628-ZSD-6974_test1",
-    "aanvragen_Klachten_tests2": "cucumber-js --tags @Aanvragen_Klacht_REQ-K-ZSD-1628-ZSD-6974_test2",
-    "aanvragen_Klachten_tests3": "cucumber-js --tags @Aanvragen_Klacht_REQ-K-ZSD-1628-ZSD-6974_test3",
-    "Aanvragen_BUK_New_Client": "cucumber-js --tags @Aanvragen_BUK_New_Client_test1 or @Aanvragen_BUK_New_Client_test2"
+    "debug": "cucumber-js --tags  @"
   },
   "keywords": [],
   "author": "Gino Fernald",
