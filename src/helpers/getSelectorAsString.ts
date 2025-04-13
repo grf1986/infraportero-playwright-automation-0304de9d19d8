@@ -1,20 +1,11 @@
-import {Page,Locator} from "@playwright/test";
+import {Locator} from "@playwright/test";
 
-import { genericText } from "../statics/Text/genericText";
 import { ILogObj, Logger } from "tslog";
 //import { CheckText } from "../functions/checkText"; 
 
 const log: Logger<ILogObj> = new Logger();
 export class Locator2String {
 
-    // readonly page: Page;
-
-   
-    // constructor(page:Page) {
-    // this.page = page;
-
-    // }
- 
 
     async getSelectorAsString(selectorElement: Locator): Promise<string>  {
         // Convert the locator to a string representation

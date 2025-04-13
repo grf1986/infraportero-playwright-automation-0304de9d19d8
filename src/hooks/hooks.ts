@@ -2,7 +2,7 @@ import { After, Before, Status } from "@cucumber/cucumber";
 import { Browser, BrowserContext, Page, PageScreenshotOptions, chromium } from "@playwright/test";
 
 import { writeFile } from 'fs/promises';
-import { GetTodayDate } from "../functions/getDate";
+import { GetTodayDate } from "../helpers/getDate";
 
 
 let browser: Browser;

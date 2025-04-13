@@ -1,8 +1,8 @@
 import { page } from "../../hooks/hooks";
 import { Then, setDefaultTimeout } from "@cucumber/cucumber";
 import { ILogObj, Logger } from "tslog";
-import FunctionAppIndex from "../../pageObjects/functionsApp/FunctionApp.index";
-import { DrukOpTypeKnop } from "../../functions/drukOpTypeKnop";
+import FunctionAppIndex from "../../pageObjects/TASapp/FunctionApp.index";
+import { DrukOpTypeKnop } from "../../functions/DrukOpButton/drukOpTypeKnop";
 
 
 
