@@ -41,12 +41,4 @@ export class DropDownPage{
     else { return }  //Return ??
 }
 
-    async Dropdown_DropDown_Zoeken_Invullen(value: string, index: number, indexpijl:number, tab: number){
-        const targetPage = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
-            if(targetPage){
-            const dropDown = new dropDownGeneric(targetPage);
-            await dropDown.DropDown_Zoeken_Invullen_Generic(value, index, indexpijl);
-            }
-            else { return } //Return ??
-    }
 }

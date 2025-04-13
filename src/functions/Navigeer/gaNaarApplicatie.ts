@@ -1,4 +1,4 @@
-import { BrowserContext, Fixtures, Logger, Page } from "@playwright/test";
+import {Page } from "@playwright/test";
 
 
 
@@ -13,16 +13,6 @@ export class GaNaarAPP {
   async NavigeerNaarAPP(url: string) {
     await this.page.goto(url);
   }
-
-  async AanvragenApp(url: string) {
-    await this.page.goto(url);
-
-  }
-
-  async exportPage(page: Page){
-    return page;
-  }
-
 
 }
 

@@ -68,28 +68,7 @@ export class Voorbeeld3_druk_op {
       await button.nth(index).click();
       await this.page.waitForTimeout(200);
     }
-
-    else if(type == "Kebab menu brieven"){
-      await this.page.waitForTimeout(200)
-      const button = this.parentLocator.locator(`[data-test-id='202401101750130738704']`);
-      await button.nth(index).click();
-      await this.page.waitForTimeout(200)
-    }
-
-    else  if (type == "Menu item"){
-      await this.page.waitForTimeout(200)
-      const button = this.parentLocator.locator('[class="menu menu-format-standard menu-regular"][style="display: block;"] [class="menu-item-anchor "]')
-      await button.locator(":has-text('" + `${text}` + "')").nth(index).click();
-      await this.page.waitForTimeout(200);
-    
-    }else if (type == "n.v.t"){
-      
-    }
   
   }
-
-  
-
-  
 
 }

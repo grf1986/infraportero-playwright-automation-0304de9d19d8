@@ -6,10 +6,7 @@ export class Upload {
    
     constructor(private page:Page) {
     this.page = page;
-    this.uploadButton = this.page.locator('[data-test-id="2019080503431005619"] >div>div>table>tbody>tr>td>[title="Bestand(en) selecteren"]');
-
-    //input[type="file"]
-    //filePath= TestData/dummy.pdf
+    this.uploadButton = this.page.locator('');
     }
     async File(path: string) {
       await this.page.waitForLoadState("load");
