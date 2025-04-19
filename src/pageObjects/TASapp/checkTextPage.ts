@@ -32,6 +32,15 @@ export class CheckTextPage{
             {return}
     }
 
+    async AccountGebruikersNaam(index:number,tab: number){
+      const targetTab = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
+      if (targetTab){
+      const accountGebruikersNaam =  new CheckText(targetTab)
+      return await accountGebruikersNaam.AccountGebruikersNaam(index)
+      }
+      {return}
+}
+
    
    
 
