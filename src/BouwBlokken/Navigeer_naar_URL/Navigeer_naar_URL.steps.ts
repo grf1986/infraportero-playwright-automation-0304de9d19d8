@@ -18,14 +18,6 @@ Then('Navigeer naar URL: {string}', async (url) => {
     log.silly("Navigeer naar URL: " + url);
 });
 
-
-
-
-
-
-
-
-
 export { };
 
 

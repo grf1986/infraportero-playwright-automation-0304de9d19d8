@@ -10,10 +10,9 @@ let page: Page;
 // Pick browser dynamically based on environment variable (default chromium)
 async function launchBrowser() {
   const browserName = process.env.BROWSER || 'chromium';
+  
 
   switch (browserName.toLowerCase()) {
-    // case 'all':
-      // return await Promise.all([chromium.launch({ headless: false }), firefox.launch({ headless: false }), webkit.launch({ headless: false })]);
     case 'firefox':
       return await firefox.launch({ headless: false });
     case 'webkit':
@@ -30,13 +29,24 @@ async function takeScreenshot(scenarioName: string) {
   await page.screenshot({ path: screenshotPath });
   return screenshotPath;
 }
+function getUserAgent(browserName: string): string {
+  switch (browserName) {
+    case "firefox":
+      return "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0";
+    case "webkit":
+      return "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15";
+    case "chromium":
+    default:
+      return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
+  }
+}
 
 Before(async () => {
   browser = await launchBrowser();
   context = await browser.newContext({
     ignoreHTTPSErrors: true,
     viewport: { width: 1920, height: 1080 },
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '+ `${process.env.BROWSER}` +'/122.0.0.0 Safari/537.36',
+    userAgent: getUserAgent(process.env.BROWSER || 'chromium'),
     locale: 'en-US',
     timezoneId: 'Europe/Amsterdam',
     javaScriptEnabled: true,
