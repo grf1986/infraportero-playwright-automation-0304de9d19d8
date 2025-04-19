@@ -1,15 +1,5 @@
-import {Locator, Page } from "@playwright/test";
-
-import { context, page } from "../../hooks/hooks";
-
-
-
-import { NavigeerNaarTab } from "../../functions/Navigeer/navigeerNaarTab";
-import { voorbeeld } from "../../functions/DrukOpButton/voorbeeld";
-import { Voorbeeld3_druk_op } from "../../functions/DrukOpButton/voorbeeld3_druk_op";
-
-
-
+import { Page } from "@playwright/test";
+import { context } from "../../hooks/hooks";
 
 
 export class WachtenOpPage {

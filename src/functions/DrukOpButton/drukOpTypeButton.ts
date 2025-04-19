@@ -2,15 +2,21 @@ import { Locator, Page } from "@playwright/test";
 import { context } from "../../hooks/hooks";
 
 
-export class Voorbeeld3_druk_op {
+export class DrukOpTypeButton {
   readonly parentLocator: Locator;
+  readonly headerBlock: Locator;
+  readonly hamburgerMenu: Locator;
+  readonly logo: Locator;
+  readonly zoekenInvullen: Locator;
+  readonly accountLogo: Locator;
+  readonly winkelMandje: Locator;
   private readonly newTab = context.pages();
   readonly tab0 = this.newTab[0];
   readonly tab1 = this.newTab[1];
   readonly tab2 = this.newTab[2];
   readonly tab3 = this.newTab[3];
   readonly tab4 = this.newTab[4];
-  private  caseList: string[] = [];
+
 
   constructor(private page: Page) {
     this.tab1 = this.newTab[1];
@@ -18,12 +24,18 @@ export class Voorbeeld3_druk_op {
     this.tab3 = this.newTab[3];
     this.tab4 = this.newTab[4];
     this.page = page;
-    this.parentLocator = this.page.locator('');
+    this.parentLocator = this.page.locator('[class="page-wrapper"]');
+    this.headerBlock = this.parentLocator.locator('[class="header content"]');
+    this.hamburgerMenu = this.headerBlock.locator('[data-block="dropdown"]');
+    this.logo=this.headerBlock.locator('[class="logo"]');
+    this.zoekenInvullen = this.headerBlock.locator('[placeholder="Zoeken"]');
+    this.accountLogo = this.headerBlock.locator('[class="header__account-icon"]');
+    this.winkelMandje = this.headerBlock.locator('[class="action showcart"]');
     
      
   }
 
-  async VoorbeeldFunctie(type: string,text: string,index: number) {
+  async drukOpTypeButton(type: string,text: string,index: number) {
     await this.page.waitForLoadState("load");
     
     if (type == "label" && text != "Yes" && text  != "No") {
@@ -71,4 +83,37 @@ export class Voorbeeld3_druk_op {
   
   }
 
+  async DrukHeaderButtons(button: string, index: number, value: string) {
+    await this.page.waitForLoadState("load");
+
+    switch (button) {
+        case "Hamburger menu":
+            await this.hamburgerMenu.nth(index).click();
+            break;
+
+        case "Logo":
+            await this.logo.nth(index).click();
+            break;
+
+        case "Zoeken":
+            await this.zoekenInvullen.nth(index).click();
+            await this.zoekenInvullen.nth(index).fill(value);
+            await this.zoekenInvullen.nth(index).press("Enter");
+
+            break;
+
+        case "Account":
+            await this.accountLogo.nth(index).click();
+            break;
+
+        case "Winkelmandje":
+            await this.winkelMandje.nth(index).click();
+            break;
+
+        default:
+            throw new Error(`Unknown button name: ${button}`);
+    }
 }
+
+  }
+

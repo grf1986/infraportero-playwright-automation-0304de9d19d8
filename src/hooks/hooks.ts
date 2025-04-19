@@ -23,8 +23,18 @@ async function takeScreenshot(scenarioName: string) {
 
 Before(async () => {
   browser = await chromium.launch({ headless: false, });
-  context = await browser.newContext({ ignoreHTTPSErrors: true, });
+  context = await browser.newContext({ ignoreHTTPSErrors: true, 
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    viewport: { width: 1280, height: 720 },
+    javaScriptEnabled: true,
+    locale: 'en-US',
+    timezoneId: 'Europe/Amsterdam',
+
+  });
   page = await context.newPage();
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+  });
 
   await page.setViewportSize({
     width: 1920,

@@ -1,14 +1,7 @@
-import {Locator, Page } from "@playwright/test";
-
-import { context, page } from "../../hooks/hooks";
-
-
-
+import {Page } from "@playwright/test";
+import { context} from "../../hooks/hooks";
 import { NavigeerNaarTab } from "../../functions/Navigeer/navigeerNaarTab";
-import { voorbeeld } from "../../functions/DrukOpButton/voorbeeld";
-import { Voorbeeld3_druk_op } from "../../functions/DrukOpButton/voorbeeld3_druk_op";
-
-
+import { DrukOpTypeButton } from "../../functions/DrukOpButton/drukOpTypeButton";
 
 
 
@@ -32,12 +25,22 @@ export class DrukOpPage {
    async DrukOpTypeKnop(type: string,text: string,index: number,tab: number){
             const targetTab = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
                 if (targetTab){
-                await new Voorbeeld3_druk_op(targetTab).VoorbeeldFunctie(type,text,index);
+                await new DrukOpTypeButton(targetTab).drukOpTypeButton(type,text,index);
                 }
                 else { return 
                   
                 }
    }
+
+   async headernavigatie(button: string, index: number, value: string,tab: number){
+    const targetTab = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
+        if (targetTab){
+        await new DrukOpTypeButton(targetTab).DrukHeaderButtons(button,index,value);
+        }
+        else { return 
+          
+        }
+}
 
 
 
