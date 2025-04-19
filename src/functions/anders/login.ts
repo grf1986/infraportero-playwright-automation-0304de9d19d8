@@ -19,9 +19,9 @@ export class LoginInFunction {
     this.tab2 = this.newTab[2];
     this.tab3 = this.newTab[3];
     this.tab4 = this.newTab[4];
-    this.username = this.page.locator('[id="txtUserID"]');
-    this.password = this.page.locator('[id="txtPassword"]');
-    this.submitbutton = this.page.locator('[id="sub"]');
+    this.username = this.page.locator('[title="E-mail"]');
+    this.password = this.page.locator('[title="Wachtwoord"]');
+    this.submitbutton = this.page.locator('[type="submit"]');
 
   }
 
@@ -35,20 +35,12 @@ export class LoginInFunction {
 
   async fillinUsername(username: string): Promise<void>{
     await this.username.fill(username);
-    
-    // const fillInUserName = new Locator2String().getSelectorAsString(this.username); 
-    // const fillInPassword = new Locator2String().getSelectorAsString(this.password);
-    // const invullen  = new  FillInFunction(this.page);
-  
-    // await invullen.FillIn_Veld(0,username);
   }
   async fillinPassword(password: string){
     await this.password.fill(password);
-    // const invullen  = new  FillInFunction(this.page);
-    //     await invullen.FillIn_Veld(0,password);
   }
   async PressSubMitButton(){
-    await this.submitbutton.click()
+    await this.submitbutton.nth(1).click()
   }
      }
 

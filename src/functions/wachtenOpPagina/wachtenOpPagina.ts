@@ -20,8 +20,8 @@ export class WachtenOpPage {
 
 
   async WachtenOpPagina(tijd: string) {
-const tijdNaarInt = Number(tijd)
-await this.page.waitForTimeout(tijdNaarInt);
+  const tijdNaarInt = Number(tijd)
+  await this.page.waitForTimeout(tijdNaarInt);
   }
 
 

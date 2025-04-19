@@ -3,7 +3,6 @@ import { Then, setDefaultTimeout } from "@cucumber/cucumber";
 import { ILogObj, Logger } from "tslog";
 import FunctionAppIndex from "../../pageObjects/TASapp/TASapp.index";
 import TASapp from "../../pageObjects/TASapp/TASapp.index";
-import { GaNaarAPP } from "../../functions/Navigeer/gaNaarApplicatie";
 
 
 
@@ -12,10 +11,10 @@ import { GaNaarAPP } from "../../functions/Navigeer/gaNaarApplicatie";
 setDefaultTimeout(60 * 100000 * 2);
 const log: Logger<ILogObj> = new Logger();
 
-Then('Navigeer naar URL: {string}', async (url) => {
-    const goToPage = new GaNaarAPP(page);
-    await (await goToPage.exportPage(page)).goto(url);
-    log.silly("Navigeer naar URL: " + url);
+Then('Login met gebruikersnaam: {string} en wachtwoord: {string} op tab: {string}', async (gebruikersNaam: string, wachtwoord: string, tab: number) => {
+const tasApp = new TASapp(page);
+await tasApp.loginPage.LoginToApp(gebruikersNaam,wachtwoord,tab);
+log.silly("Login met gebruikersnaam: " + gebruikersNaam + " en wachtwoord: " + wachtwoord + " op tab: " + tab);
 });
 
 

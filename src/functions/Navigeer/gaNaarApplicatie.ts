@@ -11,6 +11,7 @@ export class GaNaarAPP {
   }
 
  async exportPage(page: Page) {
+  await page.waitForLoadState("load");
   return page;
  }
 }

@@ -5,6 +5,7 @@ import { FillInPage } from "./fillInPage";
 import { CheckTextPage } from "./checkTextPage";
 import { WachtenOpPagina } from "./WachtOpPage";
 import { DrukOpTypeButton } from "../../functions/DrukOpButton/drukOpTypeButton";
+import { LoginPage } from "./LoginPage";
 
 
 
@@ -19,6 +20,7 @@ export default class TASapp{
     readonly checkTextPage: CheckTextPage;
     readonly drukopopTypeButton: DrukOpTypeButton;
     readonly wachtOpPagina:WachtenOpPagina;
+    readonly loginPage: LoginPage;
 
 
 
@@ -32,6 +34,7 @@ export default class TASapp{
         this.checkTextPage = new CheckTextPage(this.page);
         this.drukopopTypeButton = new DrukOpTypeButton(this.page);
         this.wachtOpPagina = new WachtenOpPagina(this.page);
+        this.loginPage = new LoginPage(this.page);
 
     }
     

@@ -4,8 +4,11 @@ Feature: Login
 Scenario Outline: 
 Given Navigeer naar URL: "https://www.kirpalani.com/"
 Then Wacht op deze pagina voor: "1000" miliseconden op tab: "0"
-When Header button: "Zoeken" value: "computer" met index: "0" op tab: "0"
-# Then Druk op type: "checkbox" met naam: "verify you are human" met index: "0" op tab: "0"
-Then Wacht op deze pagina voor: "10000" miliseconden op tab: "0"
+When Header button: "Account" value: "N.V.T" met index: "0" op tab: "0"
+When Login met gebruikersnaam: "info@testautomation-solutions.nl" en wachtwoord: "Ma2!PrGP@XS8bZf" op tab: "0"
+# Then validation met expect checktext
+
+
+
 
 
