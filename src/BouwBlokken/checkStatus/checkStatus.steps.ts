@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import {Then, When, setDefaultTimeout } from "@cucumber/cucumber";
 import { ILogObj, Logger } from "tslog";
-import FunctionAppIndex from "../../pageObjects/TASapp/FunctionApp.index";
+import FunctionAppIndex from "../../pageObjects/TASapp/TASapp.index";
 import { page } from "../../hooks/hooks";
 
 

@@ -6,11 +6,7 @@ import { dropDownGeneric } from "../../functions/DropDowns/dropDownGeneric";
 
 export class DropDownPage{
   readonly page: Page;
-  readonly username: Locator
-  readonly password: Locator;
-  readonly submitbutton: Locator
-  readonly dropDown_SelectByValue: Locator
-  readonly dropDown_SelectOption: Locator
+
   private readonly newTab = context.pages();
   readonly tab0  = this.newTab[0];
   readonly tab1  = this.newTab[1];
@@ -20,15 +16,10 @@ export class DropDownPage{
 
   constructor(page: Page) {
     this.page = page;
-    this.username = this.page.locator('[id="txtUserID"]');
-    this.password = this.page.locator('[id="txtPassword"]');
-    this.submitbutton = this.page.locator('[id="sub"]');
     this.tab1 = this.newTab[1];
     this.tab2 = this.newTab[2];
     this.tab3 = this.newTab[3];
     this.tab4 = this.newTab[4];
-    this.dropDown_SelectByValue = this.page.locator('select>');
-    this.dropDown_SelectOption = this.page.locator('[data-test-id="202301180818010983745"]');
   }
 
 
@@ -38,7 +29,7 @@ export class DropDownPage{
     const dropDown = new dropDownGeneric(targetPage);
     await dropDown.SelectOptionByValue( value, index);
     }
-    else { return }  //Return ??
+    else { return } 
 }
 
 }

@@ -7,13 +7,15 @@ import { context, page } from "../../hooks/hooks";
 import { NavigeerNaarTab } from "../../functions/Navigeer/navigeerNaarTab";
 import { voorbeeld } from "../../functions/DrukOpButton/voorbeeld";
 import { Voorbeeld3_druk_op } from "../../functions/DrukOpButton/voorbeeld3_druk_op";
+import { WachtenOpPage } from "../../functions/wachtenOpPagina/wachtenOpPagina";
 
 
 
 
 
-export class DrukOpPage {
+export class WachtenOpPagina {
   readonly page: Page;
+  readonly clickAanvragenApp: Locator;
   private readonly newTab = context.pages();
   readonly tab0  = this.newTab[0];
   readonly tab1  = this.newTab[1];
@@ -23,16 +25,18 @@ export class DrukOpPage {
 
   constructor(page: Page) {
     this.page = page;
+    this.clickAanvragenApp = page.locator('[class="psa psa-pega-express app-fact-logo app-logo-r"]');
     this.tab1 = this.newTab[1];
     this.tab2 = this.newTab[2];
     this.tab3 = this.newTab[3];
     this.tab4 = this.newTab[4];
   }
 
-   async DrukOpTypeKnop(type: string,text: string,index: number,tab: number){
+
+   async WachtenOpPagina(tijd:string,tab: number){
             const targetTab = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
                 if (targetTab){
-                await new Voorbeeld3_druk_op(targetTab).VoorbeeldFunctie(type,text,index);
+                await new WachtenOpPage(targetTab).WachtenOpPagina(tijd);
                 }
                 else { return 
                   

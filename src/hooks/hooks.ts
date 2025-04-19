@@ -22,7 +22,7 @@ async function takeScreenshot(scenarioName: string) {
 
 
 Before(async () => {
-  browser = await chromium.launch({ headless: true, });
+  browser = await chromium.launch({ headless: false, });
   context = await browser.newContext({ ignoreHTTPSErrors: true, });
   page = await context.newPage();
 

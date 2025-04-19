@@ -10,10 +10,9 @@ export class GaNaarAPP {
     
   }
 
-  async NavigeerNaarAPP(url: string) {
-    await this.page.goto(url);
-  }
-
+ async exportPage(page: Page) {
+  return page;
+ }
 }
 
 

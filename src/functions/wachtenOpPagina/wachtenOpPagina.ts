@@ -12,8 +12,7 @@ import { Voorbeeld3_druk_op } from "../../functions/DrukOpButton/voorbeeld3_druk
 
 
 
-export class DrukOpPage {
-  readonly page: Page;
+export class WachtenOpPage {
   private readonly newTab = context.pages();
   readonly tab0  = this.newTab[0];
   readonly tab1  = this.newTab[1];
@@ -21,7 +20,7 @@ export class DrukOpPage {
   readonly tab3  = this.newTab[3];
   readonly tab4  = this.newTab[4];
 
-  constructor(page: Page) {
+  constructor(private page: Page) {
     this.page = page;
     this.tab1 = this.newTab[1];
     this.tab2 = this.newTab[2];
@@ -29,15 +28,18 @@ export class DrukOpPage {
     this.tab4 = this.newTab[4];
   }
 
-   async DrukOpTypeKnop(type: string,text: string,index: number,tab: number){
-            const targetTab = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
-                if (targetTab){
-                await new Voorbeeld3_druk_op(targetTab).VoorbeeldFunctie(type,text,index);
-                }
-                else { return 
-                  
-                }
-   }
+
+  async WachtenOpPagina(tijd: string) {
+const tijdNaarInt = Number(tijd)
+await this.page.waitForTimeout(tijdNaarInt);
+  }
+
+
+
+
+   
+
+
 
 
 
